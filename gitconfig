@@ -4,7 +4,6 @@
 [alias]
   st = status -s
   a = add
-  ci = commit
   cim = commit -m
   b = branch -vvv
   br = branch
@@ -16,7 +15,6 @@
   fa = fetch --all
   pr = pull --rebase
   pa = pull --all
-  cac = diff --cached
 
   d = diff
   ds = diff --staged
@@ -24,7 +22,14 @@
 
   amend = commit --amend
 
-  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  sl = stash list
+  sp = stash pop
+  ss = stash save
+  sa = stash apply
+  so = stash show -p
+  sd = stash drop
+
+  lol = log --graph --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
   lg = log --ignore-space-change --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches=*
   lgp = log -p --ignore-space-change --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches=*
   lgs = log --name-only --stat --ignore-space-change --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches=*
@@ -52,6 +57,9 @@
 
   ; list aliases
   aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
+
+  ; remote
+  pruno = remote prune origin
 [color]
   branch = auto
   diff = auto
@@ -62,7 +70,7 @@
 [push]
   default = current
 [core]
-  whitespace = trailing-space,space-before-tab,tab-in-indent
+  whitespace = trailing-space,space-before-tab
   editor = vim -f
   excludesfile = /Users/pierre/.gitignore
   pager = less -c
