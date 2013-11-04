@@ -1,11 +1,24 @@
-# Path to your oh-my-zsh configuration.
+# Oh My Zsh
 ZSH=$HOME/.oh-my-zsh
-
-# Set name of the theme to load.
 ZSH_THEME="sporty_256"
 
-alias zshconfig="mate ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
+plugins=(git git-extras)
+source $ZSH/oh-my-zsh.sh
+export UPDATE_ZSH_DAYS=13
+
+# Env
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export EDITOR=vim
+export PAGER=less
+
+# Aliases
+alias gd="grunt deploy --dev=1"
+alias gr="grunt restart"
+
+alias zshconf="$EDITOR ~/.zshrc"
 
 alias nomdns="
   launchctl unload /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist &&
@@ -15,25 +28,19 @@ alias mdns="
   launchctl load /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist &&
   launchctl load /System/Library/LaunchDaemons/com.apple.mDNSResponderHelper.plist"
 
-alias tnt="export CANAL_ENV=tnt"
-alias sat="export CANAL_ENV=sat"
+alias tnt="export CANALR7_TARGET=tnt"
+alias sat="export CANALR7_TARGET=sat"
 
-# Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
-export UPDATE_ZSH_DAYS=13
+alias ccat="pygmentize -g"
 
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras)
+alias l="ls -lh"
 
-source $ZSH/oh-my-zsh.sh
+# Node.js
+export PATH="/usr/local/share/npm/bin:$PATH"
 
-# Customize to your needs...
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/npm/bin
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_CTYPE=en_US.UTF-8
-
-# Aliases
-source ~/.aliases
+# Golang
+export GOPATH="$HOME/.go"
+export PATH="$GOPATH/bin:$PATH"
 
 # Ruby
 eval "$(rbenv init -)"
@@ -41,4 +48,5 @@ eval "$(rbenv init -)"
 # z
 . `brew --prefix`/etc/profile.d/z.sh
 
+# Cowsay
 cowsay -f beavis.zen Heeemeeem
