@@ -11,6 +11,7 @@
     rso = remote show origin
     cia = commit --reedit-message=HEAD
     rbc = rebase --continue
+    rba = rebase --abort
     mt = mergetool
     fa = fetch --all
     pr = pull --rebase
