@@ -68,6 +68,9 @@
     interactive = auto
     ui = auto
     pager = true
+[branch]
+    autosetuprebase = always
+    autosetupmerge = true
 [push]
     default = current
 [core]
