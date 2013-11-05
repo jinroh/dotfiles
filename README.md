@@ -1,0 +1,6 @@
+dotfiles
+========
+
+```shell
+rake install
+```
