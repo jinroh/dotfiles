@@ -2,7 +2,7 @@
 
 require 'rake'
 
-filter = %w[sublime Rakefile README.md]
+filter = %w[iterm sublime Rakefile README.md]
 
 desc "install the dot files into user's home directory"
 task :install do
