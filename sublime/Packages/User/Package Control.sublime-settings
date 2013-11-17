@@ -1,0 +1,29 @@
+{
+	"auto_upgrade_last_run": null,
+	"installed_packages":
+	[
+		"CoffeeScript",
+		"Dayle Rees Color Schemes",
+		"DocBlockr",
+		"EJS",
+		"Emmet",
+		"Git",
+		"GitGutter",
+		"Github Tools",
+		"GoSublime",
+		"Jade",
+		"knockdown",
+		"Language - French - Français",
+		"Language - French - Français",
+		"Package Control",
+		"Pretty JSON",
+		"SideBarEnhancements",
+		"Solarized Light-Dark Toggle",
+		"SublimeLinter",
+		"Theme - Cobalt2",
+		"Theme - Phoenix",
+		"Theme - Soda",
+		"Theme - Sodarized",
+		"Tomorrow Color Schemes"
+	]
+}

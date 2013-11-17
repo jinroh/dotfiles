@@ -2,14 +2,14 @@
 
 require 'rake'
 
+filter = %w[sublime Rakefile README.md]
+
 desc "install the dot files into user's home directory"
 task :install do
+  replace_all = false
   install_oh_my_zsh
   switch_to_zsh
-
-  replace_all = false
-
-  files = Dir['*'] - %w[Rakefile README.md]
+  files = Dir['*'] - filter
   files.each do |file|
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       if replace_all
