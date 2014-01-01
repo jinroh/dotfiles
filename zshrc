@@ -40,6 +40,9 @@ export NODE_PATH="/usr/local/lib/node_modules"
 export GOPATH="$HOME/.go"
 export PATH="$GOPATH/bin:$PATH"
 
+# git annex
+export PATH="$PATH:/Applications/git-annex.app/Contents/MacOS"
+
 # Ruby
 eval "$(rbenv init -)"
 
