@@ -28,9 +28,6 @@ alias mdns="
   launchctl load /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist &&
   launchctl load /System/Library/LaunchDaemons/com.apple.mDNSResponderHelper.plist"
 
-alias tnt="export CANALR7_TARGET=tnt"
-alias sat="export CANALR7_TARGET=sat"
-
 alias ccat="pygmentize -g"
 
 alias l="ls -lh"
