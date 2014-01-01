@@ -73,3 +73,5 @@
     editor = vim -f
     excludesfile = ~/.gitignore
     pager = less -c
+[rebase]
+    autosquash = true
