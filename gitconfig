@@ -9,14 +9,13 @@
     br = branch
     ci = commit
     co = checkout
-    rso = remote show origin
-    cia = commit --reedit-message=HEAD
+    pr = pull --rebase
+
+    fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+    squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+    ri = rebase --interactive --autosquash
     rbc = rebase --continue
     rba = rebase --abort
-    mt = mergetool
-    fa = fetch --all
-    pr = pull --rebase
-    pa = pull --all
 
     d = diff
     ds = diff --staged
@@ -35,12 +34,7 @@
     lg = log --ignore-space-change --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches=*
     lgp = log -p --ignore-space-change --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches=*
     lgs = log --name-only --stat --ignore-space-change --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches=*
-    mylog = "!git log --author=\"`git config --get user.name`\""
-    mylg = "!git lg --author=\"`git config --get user.name`\""
-    mylgs = "!git lgs --author=\"`git config --get user.name`\""
-    mylgp = "!git lgp --author=\"`git config --get user.name`\""
 
-    msg = commit --allow-empty -m
     unstage = reset HEAD --
     last = log -1 HEAD
 
