@@ -34,6 +34,7 @@ alias l="ls -lh"
 
 # Node.js
 export PATH="/usr/local/share/npm/bin:$PATH"
+export NODE_PATH="/usr/local/lib/node_modules"
 
 # Golang
 export GOPATH="$HOME/.go"
