@@ -6,7 +6,7 @@
     a = add
     cim = commit -m
     b = branch -vvv
-    br = branch
+    br = !git --no-pager branch --sort=-committerdate
     ci = commit
     co = checkout
     pr = pull --rebase
@@ -19,13 +19,15 @@
     rbc = rebase --continue
     rba = rebase --abort
 
+    conflicts = !sh -c 'git diff --name-only | uniq | xargs $EDITOR'
+
     d = diff
     ds = diff --staged
     wd = diff --word-diff
 
     amend = commit --amend
 
-    lol = log --graph --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    lol = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=format:'%Y-%m-%d %H:%M'
     lg = log --ignore-space-change --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches=*
     lgp = log -p --ignore-space-change --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches=*
     lgs = log --name-only --stat --ignore-space-change --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --branches=*
@@ -62,7 +64,7 @@
     autosetuprebase = always
     autosetupmerge = true
 [push]
-    default = current
+    default = simple
 [core]
     whitespace = trailing-space,space-before-tab
     editor = vim -f
@@ -70,3 +72,5 @@
     pager = less -c
 [rebase]
     autosquash = true
+[fetch]
+    prune = true
